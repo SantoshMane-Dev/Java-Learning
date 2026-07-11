@@ -179,19 +179,23 @@ public class ArrayPracticed {
     public static void simpleSort(int[] nums) {
         int [] copy = Arrays.copyOf(nums, nums.length);
         int total = 0;
+        boolean swapped = true; 
+        int j = 1;
         
-        for (int j = 0; j < copy.length - 1; j++) {
-
-            for (int i = 0; i < copy.length - (j + 1); i++) {
+        while (swapped) {
+            swapped = false;
+            for (int i = 0; i < copy.length - j; i++) {
                 int elm1 = copy[i];
                 int elm2 = copy[i+1];
 
                 if (elm1 > elm2){
+                    swapped = true;
                     copy[i] = elm2;
                     copy[i+1] = elm1;
                 }  
                 total++;
             }
+            j++;
         }  
         System.out.println(total);
         printArray(copy);
