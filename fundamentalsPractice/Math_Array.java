@@ -24,7 +24,7 @@ public class Math_Array {
         
         System.out.println("-------------------------------------");
 
-        for (int n[]: nums) {
+        for (int[] n: nums) {
             for (int m: n){
                 System.out.print(m + " ");
             }

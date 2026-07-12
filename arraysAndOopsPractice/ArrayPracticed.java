@@ -74,7 +74,7 @@ public class ArrayPracticed {
                 break;
             }
             case 9: {
-                simpleSort(nums);
+                Sorting(nums);
                 break;
             }
             default: {
@@ -107,10 +107,10 @@ public class ArrayPracticed {
         for (int i = 1; i < nums.length; i++) {
             if (largest < nums[i]) {
                 largest = nums[i];
-                }
             }
-            return largest;
         }
+        return largest;
+    }
 
     public static int smallestElement(int[] nums){
         int smallest = nums[0];
@@ -176,7 +176,7 @@ public class ArrayPracticed {
         System.out.println(nums[nums.length - 1]+"]");
     }
 
-    public static void simpleSort(int[] nums) {
+    public static void Sorting(int[] nums) {
         int [] copy = Arrays.copyOf(nums, nums.length);
         int total = 0;
         boolean swapped = true; 

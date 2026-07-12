@@ -27,6 +27,10 @@ public class Array {
             System.out.println(nums[i]);
         }
 
+        for (int arr : nums) {
+            System.out.print(arr + " ");
+        }
+
         sc.close();
-    }
+    }   
 }
