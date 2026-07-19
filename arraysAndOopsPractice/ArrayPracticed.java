@@ -7,17 +7,12 @@ public class ArrayPracticed {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        boolean isValid = true;
-        int[] nums = new int[0];
+        
         int choice = 0;
 
-        try {
-            nums = ArrayUtility.inputArray(sc);
-        } catch (Exception e) {
-            isValid = false;
-        }
+        int[] nums = ArrayUtility.inputArray();
 
-        while (isValid) {
+        while (true) {
             System.out.println("\n---------------------------------");
             System.out.println("1. To Find Array Sum");
             System.out.println("2. To Find Array Average");
