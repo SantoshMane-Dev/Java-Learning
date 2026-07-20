@@ -67,7 +67,7 @@ public class ModernSwitch {
     }
 
     static boolean invprint() {
-        System.out.println("Invalid");
+        System.out.println("Invalid!");
         return false;
     }
 
