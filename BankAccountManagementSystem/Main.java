@@ -54,7 +54,7 @@ public class Main {
                     break;
                 }
                 default: {
-                    System.out.println("Invalid Credentials!");
+                    System.out.println("\n----------Invalid Credentials!--------------");
                     break;
                 }
             }
@@ -79,12 +79,21 @@ public class Main {
         double balance = sc.nextDouble();
 
         System.out.println("-----------------------------------------------\n");
+
         if (type.equalsIgnoreCase("savings")) {
-            first = new SavingsAccount(name, type, number, balance);
-            System.out.println("------------Savings Account Created Succesfully-------------\n"); 
+            if (number > 100) {
+                first = new SavingsAccount(name, type, number, balance);
+                System.out.println("------------Savings Account Created Succesfully-------------\n"); 
+            } else {
+                System.out.println("\n---------Only Three Digits Account Number Accepted------------\n");
+            }
         } else if (type.equalsIgnoreCase("current")) {
-             first = new CurrentAccount(name, type, number, balance);
-            System.out.println("------------Current Account Created Succesfully-------------\n"); 
+            if(number > 100){
+                first = new CurrentAccount(name, type, number, balance);
+                System.out.println("------------Current Account Created Succesfully-------------\n"); 
+            }else {
+                System.out.println("\n---------Only Three Digits Account Number Accepted------------\n");
+            }
         } else {
         System.out.println("---------------Invalid Account Type!------------\n");
         }
