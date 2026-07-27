@@ -4,11 +4,10 @@ import java.util.Scanner;
 
 public class Main {
 
-        BankAccount first;
-
+    BankAccount first;
 
     public static void main(String[] args) {
-        
+
         Scanner sc = new Scanner(System.in);
 
         Main main = new Main();
@@ -17,8 +16,7 @@ public class Main {
         System.out.println("\tBank Management");
         System.out.println("===============================\n");
 
-
-        while(true) {
+        while (true) {
 
             System.out.println("1. Create Account");
             System.out.println("2. Deposit");
@@ -28,7 +26,7 @@ public class Main {
 
             System.out.print("Enter Choice: ");
             int choice = sc.nextInt();
-            
+
             String space = sc.nextLine();
 
             if (choice == 0) {
@@ -36,7 +34,7 @@ public class Main {
                 break;
             }
 
-            switch(choice) {
+            switch (choice) {
                 case 1: {
                     main.createAccount(sc);
                     break;
@@ -62,7 +60,7 @@ public class Main {
         }
     }
 
-    public void createAccount(Scanner sc){
+    public void createAccount(Scanner sc) {
 
         System.out.println("\n----------------WELCOME-----------------------");
 
@@ -83,24 +81,23 @@ public class Main {
         if (type.equalsIgnoreCase("savings")) {
             if (number > 100) {
                 first = new SavingsAccount(name, type, number, balance);
-                System.out.println("------------Savings Account Created Succesfully-------------\n"); 
+                System.out.println("------------Savings Account Created Succesfully-------------\n");
             } else {
                 System.out.println("\n---------Only Three Digits Account Number Accepted------------\n");
             }
         } else if (type.equalsIgnoreCase("current")) {
-            if(number > 100){
+            if (number > 100) {
                 first = new CurrentAccount(name, type, number, balance);
-                System.out.println("------------Current Account Created Succesfully-------------\n"); 
-            }else {
+                System.out.println("------------Current Account Created Succesfully-------------\n");
+            } else {
                 System.out.println("\n---------Only Three Digits Account Number Accepted------------\n");
             }
         } else {
-        System.out.println("---------------Invalid Account Type!------------\n");
+            System.out.println("---------------Invalid Account Type!------------\n");
         }
     }
 
-
-    public void deposit(Scanner sc){
+    public void deposit(Scanner sc) {
         if (first == null) {
             System.out.println("----------Account Not Found--------------\n");
         } else {
@@ -123,12 +120,12 @@ public class Main {
     }
 
     public void viewDetail() {
-         if (first == null) {
+        if (first == null) {
             System.out.println("----------Account Not Found--------------\n");
         } else {
             ViewDetails view = new ViewDetails();
             view.display(first);
         }
     }
-    
+
 }

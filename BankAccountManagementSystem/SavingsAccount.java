@@ -14,11 +14,12 @@ public class SavingsAccount extends BankAccount {
         double balance = getCurrentBalance();
 
         double remainingBalance = balance - withdrawalMoney;
-        
-        if(remainingBalance >= minimumBalance) {
-        super.withdraw(withdrawalMoney);
+
+        if (remainingBalance >= minimumBalance) {
+            super.withdraw(withdrawalMoney);
         } else {
-            System.out.println("\n---------Withdrawal denied. Minimum balance of ₹500 must be maintained.------------\n");
+            System.out
+                    .println("\n---------Withdrawal denied. Minimum balance of ₹500 must be maintained.------------\n");
         }
     }
 }

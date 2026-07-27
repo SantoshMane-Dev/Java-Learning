@@ -43,12 +43,12 @@ public abstract class BankAccount {
 
     public void deposit(double addMoney) {
 
-        if (addMoney <= 0) {    
+        if (addMoney <= 0) {
             System.out.println("\n-----------Invalid Money!-------------------\n");
         } else {
-        currentBalance += addMoney;
-        System.out.printf("\n-------Money Deposited Successfully, Current Balance: %.2f-----", currentBalance);
-        System.out.println("\n");
+            currentBalance += addMoney;
+            System.out.printf("\n-------Money Deposited Successfully, Current Balance: %.2f-----", currentBalance);
+            System.out.println("\n");
         }
     }
 

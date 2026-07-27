@@ -4,10 +4,10 @@ import java.io.FileNotFoundException;
 
 public class Medium {
     public static void main(String[] args) {
-        
+
         try {
             display();
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
@@ -19,12 +19,11 @@ public class Medium {
         }
 
     }
-    
+
     public static void display() throws FileNotFoundException {
 
         throw new FileNotFoundException("File Not Found!");
 
     }
-
 
 }
