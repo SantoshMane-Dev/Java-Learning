@@ -1,4 +1,4 @@
-package arraysAndOopsPractice;
+package arraysAndOopsPrcatice;
 
 import java.util.Arrays;
 import java.util.Scanner;
