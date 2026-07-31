@@ -2,7 +2,7 @@ package TernaryAndRecursion;
 
 import java.util.Scanner;
 
-import arraysAndOopsPractice.ArrayUtility;
+import ArraysAndOopsPractice.ArrayUtility;
 
 public class sumOfPositive {
     public static void main(String[] args) {

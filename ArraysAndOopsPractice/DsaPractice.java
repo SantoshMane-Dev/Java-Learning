@@ -1,4 +1,4 @@
-package arraysAndOopsPractice;
+package ArraysAndOopsPractice;
 
 public class DsaPractice {
     public static void main(String[] args) {

@@ -26,8 +26,7 @@ public class Main {
 
             System.out.print("Enter Choice: ");
             int choice = sc.nextInt();
-
-            String space = sc.nextLine();
+            sc.nextLine();
 
             if (choice == 0) {
                 System.out.println("Thank You, Exiting.........");

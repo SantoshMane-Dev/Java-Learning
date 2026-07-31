@@ -1,4 +1,5 @@
-package arraysAndOopsPractice;
+package ArraysAndOopsPractice;
+
 import java.util.Scanner;
 
 public class ArrayUtility {

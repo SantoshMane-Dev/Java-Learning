@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.io.*;
 
-public class FileDemo {
+public class StudentFile {
     public static void main(String[] args) {
 
         File f1 = new File("Student.txt");

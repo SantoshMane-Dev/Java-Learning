@@ -1,6 +1,6 @@
 package TernaryAndRecursion;
 
-import arraysAndOopsPractice.ArrayUtility;
+import ArraysAndOopsPractice.ArrayUtility;
 
 public class findMaxValue {
     public static void main(String[] args) {

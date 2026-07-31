@@ -1,4 +1,4 @@
-package arraysAndOopsPractice;
+package ArraysAndOopsPractice;
 
 public class Practice2D {
     public static void main(String[] args) {

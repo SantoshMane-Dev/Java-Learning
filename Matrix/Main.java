@@ -1,7 +1,5 @@
 package Matrix;
 
-import Matrix.MyMatrix;
-
 public class Main {
     public static void main(String[] args) {
         
@@ -26,9 +24,6 @@ public class Main {
             System.out.println(m1.get(1, 1));
 
         } catch(Exception e) {
-
         }
-
-
     }
 }

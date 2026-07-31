@@ -2,7 +2,7 @@ package TernaryAndRecursion;
 
 import java.util.Scanner;
 
-import arraysAndOopsPractice.ArrayUtility;
+import ArraysAndOopsPractice.ArrayUtility;
 
 public class OccurrencesForeach {
     public static void main(String[] args) {

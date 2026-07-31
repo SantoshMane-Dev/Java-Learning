@@ -32,6 +32,9 @@ public class Student{
             Student s1 = new Student("Santosh","Java", 23);
             Student s2 = new Student("Pranav","C++", 24);
 
+            s1.age = 25;
+            s2.course = "Python";
+
             stringManipulation();
         }
     }
