@@ -9,6 +9,7 @@ public class Test {
 
         m1.commute();
         t1.balance();
+        System.out.println("\n"+ v1);
 
 
     }
