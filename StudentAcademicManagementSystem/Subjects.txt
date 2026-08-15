@@ -1,0 +1,5 @@
+CS101|Computer Science|100
+J102|Java|100
+JS103|JavaScript|100
+SB104|SpringBoot|100
+P105|Python|100

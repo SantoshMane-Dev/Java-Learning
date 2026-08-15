@@ -2,6 +2,7 @@ package StudentAcademicManagementSystem.Service;
 
 import StudentAcademicManagementSystem.Model.Student;
 import StudentAcademicManagementSystem.Model.Subject;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class EnrollmentManager {
@@ -9,18 +10,27 @@ public class EnrollmentManager {
     private StudentManager studentManager;
     private SubjectManager subjectManager;
 
-    public EnrollmentManager(StudentManager studentManager, SubjectManager subjectManager) {
+    public EnrollmentManager(
+            StudentManager studentManager,
+            SubjectManager subjectManager) {
         this.studentManager = studentManager;
         this.subjectManager = subjectManager;
     }
 
     public void enrollStudentToSubject(Scanner sc) {
+
         System.out.print("Enter Student ID: ");
-        int studentId = sc.nextInt();
-        sc.nextLine();
+        int studentId;
+        try {
+            studentId = sc.nextInt();
+            sc.nextLine();
+        } catch (InputMismatchException e) {
+            System.out.println("\nPlease enter a valid Student ID!");
+            sc.nextLine();
+            return;
+        }
 
         Student student = studentManager.findStudentById(studentId);
-
         if (student == null) {
             System.out.println("\nStudent Not Found!");
             return;
@@ -29,7 +39,6 @@ public class EnrollmentManager {
         System.out.print("Enter Subject Code: ");
         String subjectCode = sc.nextLine();
         Subject subject = subjectManager.findSubjectByCode(subjectCode);
-
         if (subject == null) {
             System.out.println("\nSubject Not Found!");
             return;
@@ -40,8 +49,15 @@ public class EnrollmentManager {
     public void viewStudentSubjects(Scanner sc) {
 
         System.out.print("Enter Student ID: ");
-        int studentId = sc.nextInt();
-        sc.nextLine();
+        int studentId;
+        try {
+            studentId = sc.nextInt();
+            sc.nextLine();
+        } catch (InputMismatchException e) {
+            System.out.println("\nPlease enter a valid Student ID!");
+            sc.nextLine();
+            return;
+        }
         Student student = studentManager.findStudentById(studentId);
         if (student == null) {
             System.out.println("\nStudent Not Found!");
@@ -53,8 +69,15 @@ public class EnrollmentManager {
     public void addMarks(Scanner sc) {
 
         System.out.print("Enter Student ID: ");
-        int studentId = sc.nextInt();
-        sc.nextLine();
+        int studentId;
+        try {
+            studentId = sc.nextInt();
+            sc.nextLine();
+        } catch (InputMismatchException e) {
+            System.out.println("\nPlease enter a valid Student ID!");
+            sc.nextLine();
+            return;
+        }
         Student student = studentManager.findStudentById(studentId);
         if (student == null) {
             System.out.println("\nStudent Not Found!");
@@ -63,16 +86,30 @@ public class EnrollmentManager {
         System.out.print("Enter Subject Code: ");
         String subjectCode = sc.nextLine();
         System.out.print("Enter Marks: ");
-        double marks = sc.nextDouble();
-        sc.nextLine();
+        double marks;
+        try {
+            marks = sc.nextDouble();
+            sc.nextLine();
+        } catch (InputMismatchException e) {
+            System.out.println("\nPlease enter valid marks!");
+            sc.nextLine();
+            return;
+        }
         student.addMarks(subjectCode, marks);
     }
 
     public void viewResult(Scanner sc) {
 
         System.out.print("Enter Student ID: ");
-        int studentId = sc.nextInt();
-        sc.nextLine();
+        int studentId;
+        try {
+            studentId = sc.nextInt();
+            sc.nextLine();
+        } catch (InputMismatchException e) {
+            System.out.println("\nPlease enter a valid Student ID!");
+            sc.nextLine();
+            return;
+        }
         Student student = studentManager.findStudentById(studentId);
         if (student == null) {
             System.out.println("\nStudent Not Found!");
@@ -80,5 +117,4 @@ public class EnrollmentManager {
         }
         student.viewResult();
     }
-
 }

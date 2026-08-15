@@ -120,3 +120,6 @@ public class Main {
         sc.close();
     }
 }
+
+// remains exceptions
+// subject updation, removation remains

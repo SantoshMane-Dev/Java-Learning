@@ -1,6 +1,7 @@
 package StudentAcademicManagementSystem.Service;
 
 import StudentAcademicManagementSystem.Model.*;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class SubjectManager {
@@ -14,27 +15,33 @@ public class SubjectManager {
     }
 
     public void addSubject(Scanner sc) {
-
         System.out.print("1. Enter Subject Code: ");
         String subjectCode = sc.nextLine();
-
         System.out.print("2. Enter Subject Name: ");
         String subjectName = sc.nextLine();
-
         System.out.print("3. Enter Maximum Marks: ");
-        int maxMarks = sc.nextInt();
-        sc.nextLine();
+        int maxMarks;
+        try {
+            maxMarks = sc.nextInt();
+            sc.nextLine();
+        } catch (InputMismatchException e) {
+            System.out.println("\nPlease enter valid marks!");
+            sc.nextLine();
+            return;
+        }
 
         if (subjectCount >= 100) {
             System.out.println("\nList Is Full");
             return;
         }
 
-        Subject subject = new Subject(subjectCode, subjectName, maxMarks);
+        Subject subject = new Subject(
+                subjectCode,
+                subjectName,
+                maxMarks);
         subjects[subjectCount] = subject;
         subjectCount++;
-
-        System.out.println("\nSubject Added Successfully. ");
+        System.out.println("\nSubject Added Successfully.");
     }
 
     public void viewSubjects() {
@@ -42,11 +49,18 @@ public class SubjectManager {
             System.out.println("\nSubject Not Found");
         } else {
             int i = 0;
-            System.out.println("\n---------- Subject's Details ----------");
+            System.out.println(
+                    "\n---------- Subject's Details ----------");
             while (i < subjectCount) {
-                System.out.println("1. Subject Code   : " + subjects[i].getSubjectCode());
-                System.out.println("2. Subject Name   : " + subjects[i].getSubjectName());
-                System.out.println("3. Subject Marks  : " + subjects[i].getMaxMarks());
+                System.out.println(
+                        "1. Subject Code   : "
+                                + subjects[i].getSubjectCode());
+                System.out.println(
+                        "2. Subject Name   : "
+                                + subjects[i].getSubjectName());
+                System.out.println(
+                        "3. Subject Marks  : "
+                                + subjects[i].getMaxMarks());
                 System.out.println("--------------------------------------");
                 i++;
             }
@@ -54,31 +68,41 @@ public class SubjectManager {
     }
 
     public void searchSubject(Scanner sc) {
+
         System.out.print("Enter Subject Code For Search: ");
         String search = sc.nextLine();
-
         boolean found = false;
-
         for (int i = 0; i < subjectCount; i++) {
-            if (subjects[i].getSubjectCode().equalsIgnoreCase(search)) {
-
-                System.out.println("\n---------- Subject Details ----------");
-                System.out.println("Code      : " + subjects[i].getSubjectCode());
-                System.out.println("Name    : " + subjects[i].getSubjectName());
-                System.out.println("Marks     : " + subjects[i].getMaxMarks());
+            if (subjects[i]
+                    .getSubjectCode()
+                    .equalsIgnoreCase(search)) {
+                System.out.println(
+                        "\n---------- Subject Details ----------");
+                System.out.println(
+                        "Code      : "
+                                + subjects[i].getSubjectCode());
+                System.out.println(
+                        "Name      : "
+                                + subjects[i].getSubjectName());
+                System.out.println(
+                        "Marks     : "
+                                + subjects[i].getMaxMarks());
                 System.out.println("--------------------------------------");
-
                 found = true;
             }
         }
+
         if (!found) {
             System.out.println("\nSubject Not Found!");
         }
     }
 
     public Subject findSubjectByCode(String code) {
+
         for (int i = 0; i < subjectCount; i++) {
-            if (subjects[i].getSubjectCode().equalsIgnoreCase(code)) {
+            if (subjects[i]
+                    .getSubjectCode()
+                    .equalsIgnoreCase(code)) {
                 return subjects[i];
             }
         }
@@ -93,8 +117,14 @@ public class SubjectManager {
         return subjectCount;
     }
 
-    public void addSubjectFromFile(String code, String name, int maxMarks) {
-        Subject subject = new Subject(code, name, maxMarks);
+    public void addSubjectFromFile(
+            String code,
+            String name,
+            int maxMarks) {
+        Subject subject = new Subject(
+                code,
+                name,
+                maxMarks);
         subjects[subjectCount] = subject;
         subjectCount++;
     }

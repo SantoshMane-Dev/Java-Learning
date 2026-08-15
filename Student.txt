@@ -1,9 +1,0 @@
-Name : Santosh mane
-Age  : 23
----------------------
-Name : pranav dawane
-Age  : 25
----------------------
-Name : Pratik Bansode
-Age  : 22
----------------------
