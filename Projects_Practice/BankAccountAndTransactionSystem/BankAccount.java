@@ -9,12 +9,12 @@ public class BankAccount {
     public BankAccount(String accountName, double balance) {
 
         if (accountName == null || accountName.trim().isEmpty()) {
-            System.out.println("\nAccount Name Is Invalid");
+            throw new IllegalArgumentException("Invalid account name");
         } else {
             this.accountName = accountName.trim();
         }
         if (balance < 0) {
-            System.out.println("\nInvalid Balance!");
+            throw new IllegalArgumentException("Invalid Balance");
         } else {
             this.balance = balance;
         }
@@ -33,6 +33,10 @@ public class BankAccount {
     }
 
     public void setBalance(double balance) {
+        if (balance < 0) {
+            System.out.println("Invalid Balance!");
+            return;
+        }
         this.balance = balance;
     }
 
@@ -48,9 +52,10 @@ public class BankAccount {
         if (amount <= 0) {
             System.out.println("Enter Valid Amount.");
             return;
+        } else {
+            balance += amount;
+            System.out.println("\nDeposit Successful.");
         }
-        balance += amount;
-        System.out.println("\nDeposit Successful.");
     }
 
     void withdraw(double amount) {
@@ -61,8 +66,9 @@ public class BankAccount {
         if (balance < amount) {
             System.out.println("\nInsufficient Balance!");
             return;
+        } else {
+            balance -= amount;
+            System.out.println("\nWithdrawal Successful.");
         }
-        balance -= amount;
-        System.out.println("\nWithdrawal Successful.");
     }
 }

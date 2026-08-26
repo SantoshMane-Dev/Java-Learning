@@ -12,13 +12,12 @@ public class AccountManager {
 
     void addAccount(Scanner sc) {
         System.out.print("Enter Account Name: ");
-        String name;
-        try {
-            name = sc.nextLine();
-        } catch (InputMismatchException e) {
-            System.out.println("Enter A Valid Name.");
+        String name = sc.nextLine().trim();
+        if (name.isEmpty() || name.matches("\\d+")) {
+            System.out.println("Enter a valid name.");
             return;
         }
+        
         System.out.print("Enter Initial Balance: ");
         double balance;
         try {
